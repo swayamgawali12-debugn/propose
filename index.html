@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For HIRAL ❤️</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:cursive;
+    background:black;
+}
+
+#lock{
+    color:white;
+    text-align:center;
+}
+
+input{
+    padding:10px;
+    font-size:18px;
+    border-radius:10px;
+    border:none;
+}
+
+button{
+    padding:10px 25px;
+    font-size:18px;
+    border-radius:30px;
+    border:none;
+    cursor:pointer;
+    margin:10px;
+}
+
+#proposal{
+    display:none;
+    background:rgba(255,255,255,0.85);
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+}
+
+#yes{
+    background:#e91e63;
+    color:white;
+}
+
+#no{
+    background:gray;
+    color:white;
+    position:absolute;
+}
+</style>
+</head>
+
+<body>
+
+<div id="lock">
+    <h1>🔐 Secret Page</h1>
+    <p>Enter password 💖</p>
+    <input type="password" id="pass">
+    <br><br>
+    <button onclick="unlock()">Unlock ❤️</button>
+</div>
+
+<div id="proposal">
+    <h1>Hey Hiru ji ❤️</h1>
+    <p>Hiru, will you be my girlfriend? 💕</p>
+    <button id="yes">Yes 💖</button>
+    <button id="no">No 😢</button>
+</div>
+
+<script>
+const PASSWORD = "hiral25";
+
+function unlock(){
+    if(document.getElementById("pass").value === PASSWORD){
+        document.getElementById("lock").style.display="none";
+        document.getElementById("proposal").style.display="block";
+        document.body.style.background =
+        "url('C:\Users\Lenovo\OneDrive\Desktop\swayam\proposal\her-photo.png.jpg') no-repeat center/cover";
+    }else{
+        alert("Wrong password 😢");
+    }
+}
+
+const no = document.getElementById("no");
+no.addEventListener("mouseover",()=>{
+    no.style.left = Math.random()*90+"vw";
+    no.style.top  = Math.random()*90+"vh";
+});
+
+document.getElementById("yes").onclick = ()=>{
+    document.body.innerHTML = `
+    <div style="
+        height:100vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        background:url('C:\Users\Lenovo\OneDrive\Desktop\swayam\proposal\her-photo.png.jpg') center/cover;
+        color:white;
+        text-shadow:2px 2px 6px black;
+    ">
+        <h1>She said YES ❤️😍</h1>
+        <h2>I love you hiral 💖</h2>
+    </div>`;
+};
+</script>
+
+</body>
+</html>
